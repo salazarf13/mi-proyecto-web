@@ -1,0 +1,205 @@
+/* Reinicio general */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Verdana', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: radial-gradient(circle, #fcb69f, #ffecd2);
+    overflow: hidden;
+}
+
+/* Elementos decorativos de fondo */
+body::before,
+body::after {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    animation: float 6s ease-in-out infinite;
+}
+
+body::before {
+    top: -100px;
+    left: -100px;
+}
+
+body::after {
+    bottom: -100px;
+    right: -100px;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(20px);
+    }
+}
+
+/* Contenedor principal */
+.container {
+    width: 95%;
+    max-width: 420px;
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.container::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(135deg, rgba(255, 204, 204, 0.5), rgba(255, 102, 102, 0.3));
+    border-radius: 50%;
+    filter: blur(60px);
+    z-index: -1;
+}
+
+.title {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #1a1a2e;
+    text-align: center;
+}
+
+/* Campos de entrada */
+.input-field {
+    width: 100%;
+    padding: 12px;
+    margin: 12px 0;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.input-field:focus {
+    border-color: #e94560;
+    outline: none;
+    box-shadow: 0 0 8px rgba(233, 69, 96, 0.4);
+}
+
+/* Botones principales */
+.main-btn {
+    width: 100%;
+    padding: 12px;
+    margin: 12px 0;
+    background: linear-gradient(45deg, #ff6f91, #ff9671);
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(255, 111, 145, 0.3);
+}
+
+.main-btn:hover {
+    background: linear-gradient(45deg, #ff9671, #ff6f91);
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(255, 111, 145, 0.4);
+}
+
+.main-btn:active {
+    transform: scale(0.95);
+    box-shadow: 0 4px 10px rgba(255, 111, 145, 0.3);
+}
+
+/* Botones secundarios */
+.secondary-btn {
+    width: 100%;
+    padding: 12px;
+    margin: 12px 0;
+    background-color: #1a1a2e;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(26, 26, 46, 0.3);
+}
+
+.secondary-btn:hover {
+    background-color: #0f1b2d;
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(15, 27, 45, 0.4);
+}
+
+.secondary-btn:active {
+    transform: scale(0.95);
+    box-shadow: 0 4px 10px rgba(15, 27, 45, 0.3);
+}
+
+/* Mensaje de éxito */
+.success-message {
+    color: #28a745;
+    font-size: 15px;
+    margin-top: 15px;
+    font-style: italic;
+    text-align: center;
+    animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Footer con el nombre de German */
+.footer {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 20px;
+    color: #555;
+    font-style: italic;
+    position: relative;
+    animation: slideUp 1s ease;
+}
+
+.footer span {
+    font-weight: bold;
+    color: #e94560;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
