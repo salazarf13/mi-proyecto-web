@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container" id="userManagementView">
+        <h1 class="title">Gestión de Usuarios</h1>
+        <form id="userForm">
+            <input type="text" id="username" placeholder="Nombre del Usuario" required class="input-field">
+            <select id="userRole" class="input-field">
+                <option value="estudiante">Estudiante</option>
+                <option value="profesor">Profesor</option>
+                <option value="externo">Externo</option>
+            </select>
+            <button type="submit" class="main-btn">Registrar Usuario</button>
+        </form>
+    </div>
+
+    <div class="container" id="homeView" style="display: none;">
+        <h1 class="title">Biblioteca</h1>
+        <form id="bookForm">
+            <input type="text" id="title" placeholder="Título del libro" required class="input-field">
+            <input type="text" id="author" placeholder="Autor" required class="input-field">
+            <button type="submit" class="main-btn">Agregar libro</button>
+        </form>
+        <button id="viewBooksBtn" class="secondary-btn">Ver libros</button>
+        <button id="searchBookBtn" class="secondary-btn">Buscar libro</button>
+    </div>
+
+    <div class="container" id="booksView" style="display: none;">
+        <h1 class="title">Lista de Libros</h1>
+        <ul id="bookList" class="book-list"></ul>
+        <button id="backBtn" class="secondary-btn">Volver</button>
+    </div>
+
+    <div class="container" id="searchView" style="display: none;">
+        <h1 class="title">Buscar Libro</h1>
+        <input type="text" id="searchTitle" placeholder="Título del libro" class="input-field">
+        <button id="searchBtn" class="main-btn">Buscar</button>
+        <div id="searchResult" class="search-result"></div>
+        <button id="backSearchBtn" class="secondary-btn">Volver</button>
+    </div>
+
+    <!-- Menú de Préstamo/Devolución -->
+    <div class="container" id="actionMenu" style="display: none;">
+        <h1 class="title" id="actionTitle">Acción</h1>
+        <input type="text" id="actionName" placeholder="Nombre de la persona" class="input-field" required>
+        <input type="date" id="actionDate" class="input-field" style="display: none;">
+        <button id="actionConfirmBtn" class="main-btn">Confirmar</button>
+        <button id="actionCancelBtn" class="secondary-btn">Cancelar</button>
+    </div>
+   
+
+    <script src="app.js"></script>
+</body>
+
+
+
+</html>
